@@ -1,0 +1,19 @@
+A chrome extension needs 1 thing: a manifest json file, named "manifest.json". The manifest needs 3 things:
+A manifest_version (2 seems to be the standard), A version (like "1.1" or "3.0"), and a name.
+{
+	"manifest_version": 2,
+	"version": "1.0",
+	"name": "331Project",
+}
+will create a chrome extension.
+
+I don't know how it works for other languages, but at least with javascript, you can add a list of 
+content_scripts, background scripts, and other things to the manifest.
+Content scripts will load and run for every individual web page. This is good for altering what
+a website looks like or does.
+Background scripts will load as soon as the chrome browser is open and run until it's closed. This
+is good for listening for user actions, like probably can listen for when the user types and
+record everything they type.
+
+To test an extension, put all script files, icon, and manifest in a folder. Go to the exentions page in 
+chrome and toggle developer mode on. Then click load unpacked and upload the folder.
